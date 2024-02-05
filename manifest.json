@@ -1,0 +1,18 @@
+{
+    "name": "Le site",
+    "short_name": "L'Application",
+    "start_url": "/index.html",
+    "background_color": "#99ff99",
+    "background_color_dark": "#457f45",
+    "theme_color": "#99ff99",
+    "theme_color_dark": "#457f45",
+    "orientation": "portrait-primary",
+    "display": "fullscreen",
+    "icons": [
+        {
+            "src": "/assets/image-de-la-barre.png",
+            "type": "image/png",
+            "sizes": "144x144"
+        }
+    ]
+}
