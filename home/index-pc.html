@@ -50,24 +50,7 @@
 
 <div class="le-texte" id="typedtext"></div>
 <script>
-  // Vérifie si la PWA n'est pas déjà installée et que le navigateur prend en charge les PWA
-  if ('serviceWorker' in navigator && !navigator.standalone) {
-    window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/chemin/vers/votre/service-worker.js').then(registration => {
-              registration.onupdatefound = () => {
-                      const installingWorker = registration.installing;
-                              if (installingWorker) {
-                                        installingWorker.onstatechange = () => {
-                                                    if (installingWorker.state === 'installed' && navigator.serviceWorker.controller) {
-                                                                  // Afficher la boîte de dialogue pour l'installation
-                                                                                alert("Installer l'application maintenant !");
-                                                                                            }
-                                                                                                      };
-                                                                                                              }
-                                                                                                                    };
-                                                                                                                        });
-                                                                                                                          });
-                                                                                                                          }
+  alert("Pour les utilisateurs mobile: Veuillez télécharger l'application WPA")
 </script>
 
 <script>
