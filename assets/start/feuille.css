@@ -14,7 +14,7 @@
   }
 
   div.main_page {
-    border-radius: 10px;
+    border-radius: 20px;
     position: relative;
     display: table;
 
@@ -42,7 +42,7 @@
   }
 
   div.page_header {
-    border-radius: 10px;
+    border-radius: 20px;
     height: 99px;
     width: 100%;
 
@@ -50,7 +50,7 @@
   }
 
   div.page_header span {
-    border-radius: 10px;
+    border-radius: 20px;
     margin: 15px 0px 0px 50px;
 
     font-size: 180%;
@@ -130,6 +130,7 @@
   }
 
   div.section_header {
+    border-radius: 20px;
     padding: 3px 6px 3px 6px;
 
     background-color: #8E9CB2;
@@ -141,7 +142,7 @@
   }
 
   div.section_header_red {
-    border-radius: 10px;
+    border-radius: 20px;
     background-color: #CD214F;
   }
 
@@ -192,8 +193,8 @@
 }
 button {
         display: inline-block;
-        background-color: #7b38d8;
-        border-radius: 10px;
+        background-color: #;
+        border-radius: 20px;
         border: 4px double #cccccc;
         color: #eeeeee;
         text-align: center;
