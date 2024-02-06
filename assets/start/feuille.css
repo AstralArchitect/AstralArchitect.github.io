@@ -14,7 +14,7 @@
   }
 
   div.main_page {
-   border-radius:10px
+    border-radius: 10px;
     position: relative;
     display: table;
 
@@ -42,6 +42,7 @@
   }
 
   div.page_header {
+    border-radius: 10px;
     height: 99px;
     width: 100%;
 
@@ -49,6 +50,7 @@
   }
 
   div.page_header span {
+    border-radius: 10px;
     margin: 15px 0px 0px 50px;
 
     font-size: 180%;
@@ -139,11 +141,8 @@
   }
 
   div.section_header_red {
+    border-radius: 10px;
     background-color: #CD214F;
-  }
-
-  div.section_header_grey {
-    background-color: #9F9386;
   }
 
   .floating_element {
