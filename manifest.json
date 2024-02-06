@@ -1,7 +1,7 @@
 {
-    "name": "Le site",
+    "name": "Application Matthieu",
     "short_name": "Appli Matthieu",
-    "start_url": "/index.html",
+    "start_url": "/home/index-pc.html",
     "background_color": "#99ff99",
     "background_color_dark": "#457f45",
     "theme_color": "#99ff99",
@@ -12,7 +12,7 @@
         {
             "src": "/assets/image-de-la-barre.png",
             "type": "image/png",
-            "sizes": "144x144"
+            "sizes": "512x512"
         }
     ]
 }
