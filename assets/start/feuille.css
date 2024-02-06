@@ -137,7 +137,7 @@
 
     color: #ffff00;
     font-weight: bold;
-    font-size: 112%;
+    font-size: 200%;
     text-align: center;
   }
 
@@ -188,7 +188,7 @@
 
   div.le-texte {
   font-family: 'Courrier New', Courrier New; 
-  font-size:30pt;  
+  font-size:70pt;  
   letter-spacing: 6px; 
 }
 button {
