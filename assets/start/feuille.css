@@ -33,11 +33,11 @@
 
     text-align: center;
   }
-  .floating_element {
+  .titre {
 
     color: #ffffff;
     font-face: Verdanna;
-    font-size: 20pt;
+    font-size: 30pt;
   
   }
 
@@ -146,7 +146,7 @@
     background-color: #CD214F;
   }
 
-  .floating_element {
+  .titre {
     position: relative;
     float: left;
   }
@@ -344,7 +344,7 @@ button {
     background-color: #9F9386;
   }
 
-  .floating_element {
+  .titre {
     position: relative;
     float: left;
   }
