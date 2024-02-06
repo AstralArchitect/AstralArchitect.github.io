@@ -76,9 +76,19 @@ typewriter();
 
       </div>
     </div>
-    <button href="/fichiers/">
-      <span><a href="/fichiers/">Fichiers</a></span>
+    <button id="redirection">
+      <span>Fichiers</span>
     </button>
+    <script>
+    // Sélectionnez le bouton
+    var bouton = document.getElementById("monBouton");
+
+    // Ajoutez un écouteur d'événements pour le clic sur le bouton
+    bouton.addEventListener("click", function() {
+      // Redirigez vers une autre page
+      window.location.href = "/fichiers/index.html";
+    });
+    </script>
   </body>
 </html>
 
