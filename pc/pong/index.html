@@ -28,6 +28,7 @@
         position: absolute;
         top: 0;
         left: 1080px;
+        border-radius: 50px;
     }
     #score {
         position: absolute;
@@ -109,7 +110,7 @@
         const exit = document.getElementById('exit');
         let yous = document.getElementById('you');
         let scorePostionx = parseInt(texte.style.left) || parseInt(getComputedStyle(texte).left);
-        let ballwidth = parseInt(ball.style.left) || parseInt(getComputedStyle(ball).left); // Obtenir la position horizontale initiale de la balle
+        let ballwidth = parseInt(ball.style.left) || parseInt(getComputedStyle(ball).left);
         let ballheight = parseInt(ball.style.top) || parseInt(getComputedStyle(ball).top);
         let you = parseInt(yous.style.top) || parseInt(getComputedStyle(yous).top);
         terrainb.style.top = window.screen.height - 40 + 'px'
@@ -128,7 +129,7 @@
         function moveBall() {
             if(lose === false && win < 4){
                 // mouvements de la balle
-                if(moveR === true){
+                if(moveR){
                     ballwidth += ballSpeed;
                 }else{
                     ballwidth -= ballSpeed;
@@ -154,7 +155,7 @@
                         lose = true;
                     }
                 }
-                if(ballheight > window.screen.height - 50){
+                if(ballheight > window.screen.height - 85){
                     moveT = false;
                 }else if (ballheight < 50 + 5){
                     moveT = true;
