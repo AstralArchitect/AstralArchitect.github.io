@@ -36,13 +36,51 @@
         color: #7f7fff
 
       }
+      button {
+        display: inline-block;
+        background-color: #0606a6;
+        border-radius: 20px;
+        border: 4px double #cccccc;
+        color: #eeeeee;
+        text-align: center;
+        font-size: 35px;
+        padding: 20px;
+        width: 400px;
+        height: auto;
+        transition: all 0.5s;
+        cursor: pointer;
+        margin: 5px;
+      }
     </style>
-    <a href="/fichiers/images/"><img src="/assets/image-de-dossier.png" height="200px"><br><FONT size="5pt" face="Courrier New">Images</FONT></a>
-
+        <button id="redirection-images">
+          <img src="../assets/image-de-dossier.png" height="200px"><br><span><FONT size="5pt" face="Courrier New">Images</FONT></span>
+        </button>
+        <script>
+        // Sélectionnez le bouton
+        var bouton = document.getElementById("redirection-images");
+    
+        // Ajoutez un écouteur d'événements pour le clic sur le bouton
+        bouton.addEventListener("click", function() {
+          // Redirigez vers une autre page
+          window.location.href = "./images/index.html";
+        });
+        </script>
     <br><br><br>
 
-    <a href="/fichiers/musique/"><img src="/assets/image-de-dossier.png" height="200px"><br><FONT size="5pt" face="Courrier New">Musiques</FONT></a>
+    <button id="redirection-musique">
+      <img src="../assets/image-de-dossier.png" height="200px"><br><span><FONT size="5pt" face="Courrier New">Musiques</FONT></span>
+    </button>
+    <script>
+    // Sélectionnez le bouton
+    var bouton = document.getElementById("redirection-musique");
 
+    // Ajoutez un écouteur d'événements pour le clic sur le bouton
+    bouton.addEventListener("click", function() {
+      // Redirigez vers une autre page
+      window.location.href = "./musique/index.html";
+    });
+    </script>
+    
     <br><br><br>
 
 
