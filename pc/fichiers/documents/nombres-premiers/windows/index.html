@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="/assets/image-de-la-barre.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linux</title>
+</head>
+<style>
+    body {
+      background-color: #99FF99
+    }
+
+    a:link {
+
+      color: #FF3FFF
+
+    }
+
+    a:visited {
+
+      color: #FF3F3F
+
+    }
+
+    a:hover {
+
+      color: #0000ff
+
+    }
+
+    a:active {
+
+      color: #7f7fff
+
+    }
+  </style>
+<body>
+    <a href="https://github.com/AstralArchitect/nombres-premiers/raw/main/Recherche_NP_Windows_x64.exe" id="Recherche"><img src="/assets/image-de-dossier.png" height="200px"><br><FONT size="5pt" face="Courrier New">Recherche de nombres-premiers</FONT></a>
+
+    <br><br><br>
+
+    <a href="https://github.com/AstralArchitect/nombres-premiers/raw/main/Test_P_Windows_x64.exe" id="test"><img src="/assets/image-de-dossier.png" height="200px"><br><FONT size="5pt" face="Courrier New">Test de primarité</FONT></a>
+
+    <br><br><br>
+
+    <a href="/fichiers/documents/nombres-premiers/"><FONT size="5pt">revenir en arrière</a></FONT>
+
+    <FONT size="7pt"><div id="div_horloge"></div></FONT>
+ 
+    <script type="text/javascript"> 
+      function horloge(el) {
+        if(typeof el === "string") { el = document.getElementById(el); }
+          function actualiser() {
+            var date = new Date();
+            var str = date.getHours();
+            str += ':'+(date.getMinutes()<10?'0':'')+date.getMinutes();
+            str += ':'+(date.getSeconds()<10?'0':'')+date.getSeconds();
+            el.innerHTML = str;
+          }
+          actualiser();
+          setInterval(actualiser,500);
+        }
+        window.onload=function() {
+        horloge('div_horloge');
+        };
+    </script> 
+    <script>
+      document.getElementById('Recherche').addEventListener('click', function(event) {
+        event.preventDefault(); // Empêche le comportement par défaut du lien
+
+        // Exécutez votre fonction JavaScript ici
+        maFonction();
+      });
+
+      function maFonction() {
+        // Votre code ici
+        window.location.href = 'https://github.com/AstralArchitect/nombres-premiers/raw/main/Recherche_NP_Windows_x64.exe';
+        alert('Le téléchargement va commencer');
+      }
+    </script>
+    <script>
+      document.getElementById('test').addEventListener('click', function(event) {
+        event.preventDefault(); // Empêche le comportement par défaut du lien
+
+        // Exécutez votre fonction JavaScript ici
+        maFonction();
+      });
+
+      function maFonction() {
+        // Votre code ici
+        window.location.href = 'https://github.com/AstralArchitect/nombres-premiers/raw/main/Test_P_Windows_x64.exe';
+        alert('Le téléchargement va commencer');
+      }
+    </script>
+</body>
+</html>

@@ -1,4 +1,4 @@
-</div>
+<!DOCTYPE html>
 <html>
   <head>
     <meta charset="UTF-8"/>
@@ -7,9 +7,8 @@
     <meta name="theme-color-grey" content="#cccccc">
     <link rel="manifest" href="/manifest.json">
     <script>
-      alert(navigator.platform);
-      if(navigator.platform === "Win32"){
-        document.location.href="./pc/index.html"; 
+      if(navigator.platform != "Linux armv81"){
+        document.location.href="./pc/home/index-pc"; 
       }
     </script>
   </head>
@@ -81,8 +80,7 @@
     }
   </style>
   <body>
-    <div>Bonjour</div> 
-    <div> 
+    <div>Bonjour</div>  
     <span>, vous êtes le bienvenue</span>
   </body>
 </html>
