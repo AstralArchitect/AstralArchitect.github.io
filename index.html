@@ -8,6 +8,9 @@
     <link rel="manifest" href="/manifest.json">
     <script>
       alert(navigator.platform);
+      if(navigator.platform === "Win32"){
+        document.location.href="./pc/index.html"; 
+      }
     </script>
   </head>
   <style>
