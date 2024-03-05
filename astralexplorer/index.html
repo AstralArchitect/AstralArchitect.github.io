@@ -1,0 +1,85 @@
+<!doctype html>
+<html dir="ltr" lang="fr"
+    chrome-refresh-2023>
+  <head>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href="./logo.png">
+    <title>AstralExplorer</title>
+    <style>
+      body {
+        background: linear-gradient(to left, rgb(255,0,0), rgb(121,121,244));
+        margin: 0;
+      }
+
+      h1{
+        size: 30pt;
+        color: #04ff00;
+      }
+      .button-text{
+        font-size: 20pt;
+        font-family: 'Courier New', Courier, monospace;
+      }
+      .form-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 50px;
+      }
+      .form {
+        width: 500px;
+        border-radius: 20px 20px 20px 20px;
+        height: 40px;
+        background-color: #00aeff;
+      }
+      .site{
+        border-radius: 20px 20px 20px 20px;
+        width: auto;
+        height: 40px;
+        text-decoration: double;
+        background-color: darkblue;
+        color: #ffffff;
+        margin-top: 50px;
+        font-family: 'Comfortaa', monospace;
+      }
+      .site2{
+        border-radius: 20px 20px 20px 20px;
+        width: auto;
+        height: 40px;
+        text-decoration: double;
+        background-color: darkblue;
+        color: #ffffff;
+        margin-top: 20px;
+        font-family: 'Comfortaa', monospace;
+      }
+    </style>
+  </head>
+  <body>
+    <CENTER><H1>AstralExplorer</H1></CENTER>
+    <div class="form-container">
+      <form id="form">
+        <input type="search" class="form" id="query" name="q" placeholder="Cherchez quelque chose...">
+      </form>
+    </div>
+    <script>
+      const f = document.getElementById('form');
+      const q = document.getElementById('query');
+      const google = 'https://www.google.com/search?q=';
+
+      function submitted(event) {
+        event.preventDefault();
+        const url = google + q.value;
+        window.location.href = url;
+      }
+
+      f.addEventListener('submit', submitted);
+    </script>
+    <CENTER>
+    <form action="https://astralarchitect.github.io/">
+      <button class="site"><img src="https://astralarchitect.github.io/assets/image-de-la-barre.png" height="20px" width="20px">astralarchitect's website</button>    
+    </form>
+    <form action="https://astralarchitect.github.io/pc/pong/index.html">
+      <button class="site2">AstralPong</button>    
+    </form>
+  </CENTER>  
+  </body>
+</html>
