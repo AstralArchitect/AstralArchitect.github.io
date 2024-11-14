@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
+  <head>
+    <link rel="shortcut icon" href="/assets/image-de-la-barre.png">
+    <link rel="stylesheet" href="/assets/start/feuille.css">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="theme-color" content="#99ff99"/>
+    <link rel="manifest" href="/manifest.json">
+    <title>page principale du site de Matthieu</title>
+  </head>
+  <body>
+    <div class="main_page">
+      <div class="page_header floating_element">
+        <img src="/fichiers/images/plantes/plantes/magniolia-zoom.jpg" height="95px" width="100px" alt="Logo" class="titre" class="image"/>
+        <span class="titre">
+          <B>Page Principale du Site</B>
+        </span>
+      </div>
+      <div class="content_section titre">
+
+<div class="section_header section_header_red">
+<div id="about"></div>
+  Bonjour
+</div>
+  <div class="content_section_text">
+<p>
+
+
+<div class="le-texte" id="typedtext"></div>
+
+<script>
+// set up text to print, each item in array is new line
+let aText = new Array(
+"Bonjour, <br> nous sommes le " + new Date().toLocaleDateString() + " et vous êtes sur la page principale de ce site.",
+"<br>Merci de votre visite!"
+);
+let iSpeed = 10
+; // time delay of print out
+let iIndex = 0; // start printing array at this posision
+let iArrLength = aText[0].length; // the length of the text array
+let iScrollAt = 20; // start scrolling up at this many lines
+ 
+let iTextPos = 0; // initialise text position
+let sContents = ''; // initialise contents variable
+let iRow; // initialise current row
+ 
+function typewriter()
+{
+ sContents =  ' ';
+ iRow = Math.max(0, iIndex-iScrollAt);
+ let destination = document.getElementById("typedtext");
+ 
+ while ( iRow < iIndex ) {
+  sContents += aText[iRow++] + '<br />';
+ }
+ destination.innerHTML = sContents + aText[iIndex].substring(0, iTextPos) + "_";
+ if ( iTextPos++ == iArrLength ) {
+  iTextPos = 0;
+  iIndex++;
+  if ( iIndex != aText.length ) {
+   iArrLength = aText[iIndex].length;
+   setTimeout("typewriter()", 500);
+  }
+ } else {
+  setTimeout("typewriter()", iSpeed);
+ }
+}
+
+
+typewriter();
+</script>
+  </div>
+    </div>
+    <button id="redirection">
+      <span>Fichiers</span>
+    </button>
+    <script>
+    // Sélectionnez le bouton
+    var bouton = document.getElementById("redirection");
+
+    // Ajoutez un écouteur d'événements pour le clic sur le bouton
+    bouton.addEventListener("click", function() {
+      // Redirigez vers une autre page
+      window.location.href = "/fichiers/index.html";
+    });
+    </script>
+  </body>
+</html>
+

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<body bgcolor="#99ff99">
+<head>
+  <meta charset="UTF-8"/>
+  <link rel="shortcut icon" href="/assets/image-de-la-barre.png" />
+  <title>Plantes</title>
+</head>
+<style>
+a:link {
+  
+  color: #ff3fff
+
+}
+
+a:visited {
+
+  color: #FF0080
+
+}
+
+a:hover {
+
+  color: #0000ff
+
+}
+
+a:active {
+  
+  color: #7f7fff
+
+}
+</style>
+<a href="plantes/crocus.jpg"><img src="plantes/crocus.jpg" height="200px"></a><br><FONT size="5pt" face="Courrier New">Crocus</FONT>
+<br><br>
+<a href="plantes/autres-jonquilles.jpg"><img src="plantes/jonquilles.jpg" height="200px"></a><br><FONT size="5pt" face="Courrier New">Jonquilles</FONT>
+<br><br>
+<a href="plantes/jacinthe-groupe.jpg"><img src="plantes/jacinthe-groupe.jpg" height="200px"></a><br><FONT size="5pt" face="Courrier New">Jacinths</FONT>
+<br><br>
+<a href="plantes/magniolia-zoom.jpg"><img src="plantes/magniolia-zoom.jpg" height="200px"></a><br><FONT size="5pt" face="Courrier New">Magniolia</FONT>
+<br><br>
+<a href="plantes/PXL_20230325_165427085.jpg"><img src="plantes/PXL_20230325_165427085.jpg" height="200px"></a><br><FONT size="5pt" face="Courrier New">Inconnue</FONT></a>
+<br><br>
+<a href="plantes/"><FONT size="5pt" face="Courrier New">Voir Toutes</FONT></a>
+<br><br><br>
+<a href="/fichiers/images/"><FONT size="4pt">revenir en arrière</a></FONT>
+<FONT size="7pt"><div id="div_horloge"></div></FONT>
+ 
+<script type="text/javascript">
+window.onload=function() {
+  horloge('div_horloge');
+};
+ 
+function horloge(el) {
+  if(typeof el=="string") { el = document.getElementById(el); }
+  function actualiser() {
+    var date = new Date();
+    var str = date.getHours();
+    str += ':'+(date.getMinutes()<10?'0':'')+date.getMinutes();
+    str += ':'+(date.getSeconds()<10?'0':'')+date.getSeconds();
+    el.innerHTML = str;
+  }
+  actualiser();
+  setInterval(actualiser,500);
+}
+</script>
+</html>

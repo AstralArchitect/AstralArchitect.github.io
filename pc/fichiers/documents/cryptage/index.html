@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8"/>
+    <link rel="shortcut icon" href="../../../assets/image-de-la-barre.png" />
+    <title>Fichiers</title>
+  </head>
+  <body>
+    <style>
+      body {
+        background-color: #99FF99
+      }
+
+      a:link {
+  
+        color: #FF3FFF
+
+      }
+
+      a:visited {
+
+        color: #FF3F3F
+
+      }
+
+      a:hover {
+
+        color: #0000ff
+
+      }
+
+      a:active {
+  
+        color: #7f7fff
+
+      }
+    </style>
+    <a href="https://github.com/AstralArchitect/cryptage-js/raw/main/cryptage-Windows.exe" id="win"><img src="../../../assets/image-de-dossier.png" height="200px"><br><FONT size="5pt" face="Courrier New">Windows</FONT></a>
+
+    <br><br><br>
+
+    <a href="https://github.com/AstralArchitect/cryptage-js/raw/main/cryptage-macos" id="mac"><img src="../../../assets/image-de-dossier.png" height="200px"><br><FONT size="5pt" face="Courrier New">MacOS</FONT></a>
+
+    <br><br><br>
+
+    <a href="https://github.com/AstralArchitect/cryptage-js/raw/main/cryptage-linux" id="linux"><img src="../../../assets/image-de-dossier.png" height="200px"><br><FONT size="5pt" face="Courrier New">Linux</FONT></a>
+
+    <br><br><br><br>
+    
+    <a href="../index.html"><FONT size="5pt">revenir en arrière</a></FONT>
+
+    <FONT size="7pt"><div id="div_horloge"></div></FONT>
+ 
+    <script type="text/javascript"> 
+      function horloge(el) {
+        if(typeof el === "string") { el = document.getElementById(el); }
+          function actualiser() {
+            var date = new Date();
+            var str = date.getHours();
+            str += ':'+(date.getMinutes()<10?'0':'')+date.getMinutes();
+            str += ':'+(date.getSeconds()<10?'0':'')+date.getSeconds();
+            el.innerHTML = str;
+          }
+          actualiser();
+          setInterval(actualiser,500);
+        }
+        window.onload=function() {
+        horloge('div_horloge');
+        };
+    </script> 
+    <script>
+      document.getElementById('win').addEventListener('click', function(event) {
+        event.preventDefault(); // Empêche le comportement par défaut du lien
+
+        // Exécutez votre fonction JavaScript ici
+        maFonction();
+      });
+
+      function maFonction() {
+        // Votre code ici
+        window.location.href = 'https://github.com/AstralArchitect/cryptage-js/raw/main/cryptage-Windows.exe';
+        alert('Le téléchargement va commencer');
+      }
+    </script>
+    <script>
+      document.getElementById('linux').addEventListener('click', function(event) {
+        event.preventDefault(); // Empêche le comportement par défaut du lien
+
+        // Exécutez votre fonction JavaScript ici
+        maFonction();
+      });
+
+      function maFonction() {
+        // Votre code ici
+        window.location.href = 'https://github.com/AstralArchitect/cryptage-js/raw/main/cryptage-macos';
+        alert('Le téléchargement va commencer');
+      }
+    </script>
+    <script>
+      document.getElementById('mac').addEventListener('click', function(event) {
+        event.preventDefault(); // Empêche le comportement par défaut du lien
+
+        // Exécutez votre fonction JavaScript ici
+        maFonction();
+      });
+
+      function maFonction() {
+        // Votre code ici
+        window.location.href = 'https://github.com/AstralArchitect/cryptage-js/raw/main/cryptage-linux';
+        alert('Le téléchargement va commencer');
+      }
+    </script>
+  </body> 
+</html>

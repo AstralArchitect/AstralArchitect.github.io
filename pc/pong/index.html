@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pong</title>
+<style>
+    #you {
+        width: 50px;
+        height: 300px;
+        background-color: white;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    #ennemy {
+	    width: 50px;
+	    height: 300px;
+	    background-color: white;
+	    position: absolute;
+	    top: 0;
+	    left: calc(100vw - 50px);;
+    }
+    #ball {
+	    width: 30px;
+        height: 30px;
+        background-color: white;
+        position: absolute;
+        top: 0;
+        left: 1080px;
+        border-radius: 50px;
+    }
+    #score {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        color: white;
+        font-size: 24px;
+    }
+    #terrainh {
+        width: 100%;
+        height: 5px;
+        background-color: blue;
+        position: absolute;
+        top: 40px;
+        left: 0;
+    }
+    #terrainb {
+        width: 100%;
+        height: 5px;
+        background-color: blue;
+        position: absolute;
+        top: 40px;
+        left: 0px;
+    }
+    #exit {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        color: white;
+        font-size: 24px;
+    }
+</style>
+</head>
+<body bgcolor="#000000">
+<script>
+    if(navigator.platform === 'Win32'){
+        alert("Pour une meileur éxperience, veuillez mettre cette fenêtre en plein écran (touche F11).");
+    }else{
+        alert("Pour une meileur éxperience, veuillez mettre cette fenêtre en plein écran.");
+    }
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const movableElement = document.getElementById('you');
+        let y = window.screen.height / 2;
+        movableElement.style.top = y + 'px';
+        
+        function moveElement(key) {
+            switch (key) {
+                case 'ArrowUp':
+                    if(y > 60){
+                        y -= 30;
+                    }else{
+                        y = 45;
+                    }
+                    break;
+                case 'ArrowDown':
+                    if (y + 300 < window.screen.height - 60){
+                        y += 30;
+                    }else{
+                        y = (window.screen.height - 40) - 300
+                    }
+                    break;
+            }
+            movableElement.style.top = y + 'px';
+        }
+
+        document.addEventListener('keydown', function(event) {
+            moveElement(event.key);
+        });
+    });
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const terrainh = document.getElementById('terrainh');
+        const ennemy = document.getElementById('ennemy');
+        const ball = document.getElementById('ball');
+        const texte = document.getElementById('score');
+        const terrainb = document.getElementById('terrainb');
+        const exit = document.getElementById('exit');
+        let yous = document.getElementById('you');
+        let scorePostionx = parseInt(texte.style.left) || parseInt(getComputedStyle(texte).left);
+        let ballwidth = parseInt(ball.style.left) || parseInt(getComputedStyle(ball).left);
+        let ballheight = parseInt(ball.style.top) || parseInt(getComputedStyle(ball).top);
+        let you = parseInt(yous.style.top) || parseInt(getComputedStyle(yous).top);
+        terrainb.style.top = window.screen.height - 40 + 'px'
+        let ballSpeed = 10;
+        let moveR = true;
+        let moveT = true;
+        let lose = false;
+        let score = {
+            you: 0,
+            ennemy: 0,
+        };
+        scorePostionx = window.screen.width - 240;
+        texte.style.left = scorePostionx + 'px';
+        let win = 0;
+
+        function moveBall() {
+            if(lose === false && win < 4){
+                // mouvements de la balle
+                if(moveR){
+                    ballwidth += ballSpeed;
+                }else{
+                    ballwidth -= ballSpeed;
+                }
+                if(moveT){
+                    ballheight += ballSpeed;
+                }else {
+                    ballheight -= ballSpeed;
+                }
+                // rebonds de la balle
+                if (ballwidth > window.screen.width - (50 + 45)) {
+                    moveR = false;
+                    ballSpeed++;
+                    win++;
+                }else if(ballwidth < 50){
+                    yous = document.getElementById('you');
+                    you = parseInt(yous.style.top) || parseInt(getComputedStyle(yous).top);
+                    if(ballheight > you - 1 && ballheight < you + 301){
+                        moveR = true;
+                        ballSpeed++;
+                    }else{
+                        moveR = false;
+                        lose = true;
+                    }
+                }
+                if(ballheight > window.screen.height - 85){
+                    moveT = false;
+                }else if (ballheight < 50 + 5){
+                    moveT = true;
+                }
+                if (win < 3) {
+                    if(ballheight > window.screen.height / 2){
+                        ennemy.style.top = ballheight - 250 + 'px';
+                    }else{
+                        ennemy.style.top = (ballheight - 50) + 'px';
+                    }
+                }else if(win === 3){
+                    ennemy.style.top = (ballheight + 50) + 'px';
+                    lose = true;
+                }
+                ball.style.left = ballwidth + 'px';
+                ball.style.top = ballheight + 'px';
+            }else{
+                if(score.ennemy < 4 && win !== 3){
+                    score.ennemy++;
+                    ballSpeed = 10;
+                    ball.style.top = 0 + 'px';
+                    ball.style.left = 1080 + 'px';
+                    moveT = true;
+                    moveR = true;
+                    ballheight = parseInt(ball.style.top) || parseInt(getComputedStyle(ball).top);
+                    ballwidth = parseInt(ball.style.left) || parseInt(getComputedStyle(ball).left);
+                    win = 0;
+                    lose = false;
+                }else if(score.ennemy === 4){
+                    window.location.href = './lose.html';
+                }else if(score.you === 4){
+                    window.location.href = './win.html';
+                }else if(score.you < 4 && win === 3){
+                    score.you++;
+                    ballSpeed = 10;
+                    ball.style.top = 0 + 'px';
+                    ball.style.left = 1080 + 'px';
+                    moveT = true;
+                    moveR = true;
+                    ballheight = parseInt(ball.style.top) || parseInt(getComputedStyle(ball).top);
+                    ballwidth = parseInt(ball.style.left) || parseInt(getComputedStyle(ball).left);
+                    win = 0;
+                    lose = false;
+                }
+            }
+            updateScore();
+        }
+
+        function updateScore() {
+            document.getElementById('score').innerText = `Score: Vous - ${score.you}, Bot - ${score.ennemy}`;
+        }
+        if(navigator.platform === 'Win32'){
+            document.getElementById('exit').innerText = 'Sortir: CTRL + W'
+        }
+        setInterval(moveBall, 15);
+    });
+</script>
+
+<div id="ennemy"></div>
+<div id="ball"></div>
+<div id="you"></div>
+<div id="score">Score: You - 0, Enemy - 0</div>
+<div id="terrainh"></div>
+<div id="terrainb"></div>
+<div id="exit">Sortir: CTRL + W</div>
+</body>
+</html>

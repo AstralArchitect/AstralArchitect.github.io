@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8"/>
+    <link rel="shortcut icon" href="/assets/image-de-la-barre.png" />
+    <meta name="theme-color" content="#99ff99"/>
+    <link rel="manifest" href="/manifest.json">
+    <title>Fichiers</title>
+  </head>
+  <body>
+    <style>
+      body {
+        background-color: #99FF99
+      }
+
+      a:link {
+  
+        color: #FF3FFF
+
+      }
+
+      a:visited {
+
+        color: #FF3F3F
+
+      }
+
+      a:hover {
+
+        color: #0000ff
+
+      }
+
+      a:active {
+  
+        color: #7f7fff
+
+      }
+      button {
+        display: inline-block;
+        background-color: #0606a6;
+        border-radius: 20px;
+        border: 4px double #cccccc;
+        color: #eeeeee;
+        text-align: center;
+        font-size: 35px;
+        padding: 20px;
+        width: 400px;
+        height: auto;
+        transition: all 0.5s;
+        cursor: pointer;
+        margin: 5px;
+      }
+    </style>
+        <button id="redirection-images">
+          <img src="../assets/image-de-dossier.png" height="200px"><br><span><FONT size="5pt" face="Courrier New">Images</FONT></span>
+        </button>
+        <script>
+        // Sélectionnez le bouton
+        var bouton = document.getElementById("redirection-images");
+    
+        // Ajoutez un écouteur d'événements pour le clic sur le bouton
+        bouton.addEventListener("click", function() {
+          // Redirigez vers une autre page
+          window.location.href = "./images/index.html";
+        });
+        </script>
+    <br><br><br>
+
+    <button id="redirection-musique">
+      <img src="../assets/image-de-dossier.png" height="200px"><br><span><FONT size="5pt" face="Courrier New">Musiques</FONT></span>
+    </button>
+    <script>
+    // Sélectionnez le bouton
+    var bouton = document.getElementById("redirection-musique");
+
+    // Ajoutez un écouteur d'événements pour le clic sur le bouton
+    bouton.addEventListener("click", function() {
+      // Redirigez vers une autre page
+      window.location.href = "./musique/index.html";
+    });
+    </script>
+    
+    <br><br><br>
+
+
+
+    <a href="/home/index-pc.html"><FONT size="5pt">revenir a la page principale</a></FONT>
+
+    <FONT size="7pt"><div id="div_horloge"></div></FONT>
+ 
+    <script type="text/javascript"> 
+      function horloge(el) {
+        if(typeof el === "string") { el = document.getElementById(el); }
+          function actualiser() {
+            var date = new Date();
+            var str = date.getHours();
+            str += ':'+(date.getMinutes()<10?'0':'')+date.getMinutes();
+            str += ':'+(date.getSeconds()<10?'0':'')+date.getSeconds();
+            el.innerHTML = str;
+          }
+          actualiser();
+          setInterval(actualiser,500);
+        }
+        window.onload=function() {
+        horloge('div_horloge');
+        };
+    </script> 
+  </body> 
+</html>
