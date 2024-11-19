@@ -7,7 +7,7 @@
     <meta name="theme-color-grey" content="#cccccc">
     <link rel="manifest" href="/manifest.json">
     <script>
-      if(navigator.platform != "Linux armv81"){
+      if(!isMobile()){
         if(navigator.platform === 'Win32'){
           if (window.confirm("Voulez-vous télécharger l'application ?")) {
             window.location.href = 'https://astralarchitect.github.io/Application%20Setup%201.0.1.exe';
@@ -15,6 +15,12 @@
         }
         document.location.href="./pc/home/index-pc"; 
       }
+
+function isMobile() {
+    const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+    return /android|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(userAgent);
+}
+
     </script>
   </head>
   <style>
